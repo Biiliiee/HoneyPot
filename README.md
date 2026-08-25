@@ -6,9 +6,9 @@ Projeto desenvolvido em C nativo para Windows (Win32 API) focado em conceitos de
 
 ## Sobre o Projeto
 
-A ideia desse projeto surgiu enquanto eu estudava como o Windows gerencia a memória dos processos e como atacantes executam comandos via linha de comando (powershell.exe, cmd.exe, etc).
+A ideia desse projeto surgiu enquanto eu estudava como o Windows gerencia a memória dos processos e como agentes maliciosos executam comandos via linha de comando (powershell.exe, cmd.exe, etc).
 
-Decidi criar um executável armadilha (Honeypot/Canary). Quando alguém ou algum script clica/executa esse binário:
+Decidi criar uma armadilha (Honeypot/Canary). Quando alguém ou algum script clica/executa esse binário:
 1. Ele não executa a ação maliciosa esperada.
 2. Em vez disso, faz um snapshot da memória da máquina em tempo de execução.
 3. Descobre quem é o Processo Pai (PPID) que disparou o binário (ex: se veio do PowerShell, CMD ou de um acesso remoto).
@@ -54,13 +54,6 @@ Cada execução gera uma entrada formatada no arquivo meu_log.log:
 ========================================
 ```
 
----
 
-## Próximos Passos
-
-- [ ] Adicionar disfarce com caixa de diálogo de erro falsa do Windows (MessageBoxA).
-- [ ] Envio automático do alerta via Webhook do Discord/Telegram em vez de apenas log local.
-
----
 
 *Projeto desenvolvido para fins educacionais e de estudo sobre arquitetura interna do Windows e Purple Team.*
